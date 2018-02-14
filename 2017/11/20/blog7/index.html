@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript中的报错 | WangMeng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="WangMeng,WangMeng's Blog" />
+  
+  <meta name="description" content="作为一个程序员，需要的不仅仅是技术，更是需要在遇到错误的时候对错误的处理能力。就前端而言，技术一直在更新，但是JavaScript中的错误也就是那么几个。掌握不同的报错信息会让你的实际开发事半功倍。 JavaScript中的错误类型 Error  EvalError  RangeError  ReferenceError  SyntaxError  TypeError  URIError   E">
+<meta name="keywords" content="案例,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的报错">
+<meta property="og:url" content="//wnagmeng.github.io/2017/11/20/blog7/index.html">
+<meta property="og:site_name" content="WangMeng&#39;s Blog">
+<meta property="og:description" content="作为一个程序员，需要的不仅仅是技术，更是需要在遇到错误的时候对错误的处理能力。就前端而言，技术一直在更新，但是JavaScript中的错误也就是那么几个。掌握不同的报错信息会让你的实际开发事半功倍。 JavaScript中的错误类型 Error  EvalError  RangeError  ReferenceError  SyntaxError  TypeError  URIError   E">
+<meta property="og:updated_time" content="2018-02-14T13:36:57.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中的报错">
+<meta name="twitter:description" content="作为一个程序员，需要的不仅仅是技术，更是需要在遇到错误的时候对错误的处理能力。就前端而言，技术一直在更新，但是JavaScript中的错误也就是那么几个。掌握不同的报错信息会让你的实际开发事半功倍。 JavaScript中的错误类型 Error  EvalError  RangeError  ReferenceError  SyntaxError  TypeError  URIError   E">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">WangMeng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        WangMeng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="WangMeng" target="_blank" href="//mengcoming.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wnagmeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="qq" target="_blank" href="http://sighttp.qq.com/msgrd?v=1&uin=1160283166">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-blog7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript中的报错
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Javascript/">Javascript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-20
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <script src="/assets/js/APlayer.min.js"> </script><p>作为一个程序员，需要的不仅仅是技术，更是需要在遇到错误的时候对错误的处理能力。就前端而言，技术一直在更新，但是JavaScript中的错误也就是那么几个。掌握不同的报错信息会让你的实际开发事半功倍。</p>
+<h3 id="JavaScript中的错误类型"><a href="#JavaScript中的错误类型" class="headerlink" title="JavaScript中的错误类型"></a>JavaScript中的错误类型</h3><ul>
+<li><p>Error</p>
+</li>
+<li><p>EvalError</p>
+</li>
+<li><p>RangeError</p>
+</li>
+<li><p>ReferenceError</p>
+</li>
+<li><p>SyntaxError</p>
+</li>
+<li><p>TypeError</p>
+</li>
+<li><p>URIError</p>
+</li>
+</ul>
+<h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><p><code>Error</code>是最基本的错误类型，其他的错误类型都继承自该类型。因此，所有错误的类型共享了一组相同的属性。<br>这个类型的错误很少见。一般使用开发人员自定义抛出的错误。</p>
+<h3 id="EvalError"><a href="#EvalError" class="headerlink" title="EvalError"></a>EvalError</h3><p>这个错误会在使用eval()函数发生异常时候抛出。两种情况会出错：</p>
+<ol>
+<li><p>new eval();</p>
+</li>
+<li><p>eval = foo;</p>
+</li>
+</ol>
+<p>上面两个的意思结合就是没有直接调用eval函数，而是new或者是重新赋值</p>
+<p>这个错误基本上不会遇到，因为eval函数本来用的就不多。不过需要注意的是，eval是一个关键字。</p>
+<h3 id="RangeError"><a href="#RangeError" class="headerlink" title="RangeError"></a>RangeError</h3><p>这个错误会在数值超出相应范围时触发。比如使用new Array()的时候传递一个负数或者是超过数组最大长度（4,294,967,295）的数，比如Number.MAX_VALUE，Number.MIN_VALUE。注意递归爆炸也有这个错误。</p>
+<h3 id="ReferenceError"><a href="#ReferenceError" class="headerlink" title="ReferenceError"></a>ReferenceError</h3><p>这个错误一般就是出现在变量找不到的情况，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = b;</span><br><span class="line"><span class="keyword">var</span> a = b;</span><br><span class="line">Uncaught <span class="built_in">ReferenceError</span>: b is not defined</span><br></pre></td></tr></table></figure>
+<p>这时候就需要检查一下一个变量了</p>
+<h3 id="SyntaxError"><a href="#SyntaxError" class="headerlink" title="SyntaxError"></a>SyntaxError</h3><p>当Javascript语言解析代码时,Javascript引擎发现了不符合语法规范的tokens或token顺序时抛出SyntaxError。</p>
+<h3 id="TypeError"><a href="#TypeError" class="headerlink" title="TypeError"></a>TypeError</h3><p>这个错误在JavaScript中是经常遇到的，不管是初学者还是老手。在变量中保存着以外的类型时，或者在访问不存在的方法时。都会导致这种错误。但是归根结底还是由于在执行特定于类型的操作时，变量的类型并不符合要求所致。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="number">10</span>;</span><br><span class="line">a.style.widht = <span class="string">"10px"</span>;</span><br></pre></td></tr></table></figure>
+<p>关于设置样式这个东西，新手会遇到很多，一般这都是由获取不到元素导致的。</p>
+<h3 id="URIError"><a href="#URIError" class="headerlink" title="URIError"></a>URIError</h3><p>在使用encodeURI或者decodeURI因为URL格式不正确时，就会导致URIError错误。这种错误也很少见。</p>
+<h3 id="使用try-catch进行错误处理"><a href="#使用try-catch进行错误处理" class="headerlink" title="使用try-catch进行错误处理"></a>使用try-catch进行错误处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 尝试执行的代码</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="comment">// 如果上市执行的代码不成功则执行这段代码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 尝试执行的代码</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="comment">// 如果上市执行的代码不成功则执行这段代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>代码中 catch语句的error不能省略。</code></p>
+<p>在自己不能把我是否会出错的地方使用try-catch语句能让代码运行的更舒服。try-catch语句其实还有一句finally语句：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 尝试执行的代码</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="comment">// 如果上市执行的代码不成功则执行这段代码</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">// finally的语句始终都会执行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 尝试执行的代码</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="comment">// 如果上市执行的代码不成功则执行这段代码</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">// finally的语句始终都会执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为finally语句使用会执行，所以我们一般都不会使用 finally语句。</p>
+<h3 id="抛出错误"><a href="#抛出错误" class="headerlink" title="抛出错误"></a>抛出错误</h3><p>在使用try-catch语句时发生错误我们可以执行其他事情或者是抛出这个错误。抛出错误使用throw操作符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    alert(a)</span><br><span class="line">&#125; <span class="keyword">catch</span>(error)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"a is not defined"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    alert(a)</span><br><span class="line">&#125; <span class="keyword">catch</span>(error)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"a is not defined"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码就会抛出一个一般的错误：Uncaught Error: a is not defined。具体抛出什么错误根据实际情况确定。类型就是上面的那几种错误类型。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年02月14日 21:36</p>
+        <p>原始链接： <a class="post-url" href="/2017/11/20/blog7/" title="JavaScript中的报错">//wnagmeng.github.io/2017/11/20/blog7/</a></p>
+        <footer>
+            <a href="//wnagmeng.github.io">
+                <img src="/images/logo.png" alt="WangMeng">
+                WangMeng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=//wnagmeng.github.io/2017/11/20/blog7/&title=《JavaScript中的报错》 — WangMeng's Blog&pic=images/js.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=//wnagmeng.github.io/2017/11/20/blog7/&title=《JavaScript中的报错》 — WangMeng's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=//wnagmeng.github.io/2017/11/20/blog7/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript中的报错》 — WangMeng's Blog&url=//wnagmeng.github.io/2017/11/20/blog7/&via=//wnagmeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=//wnagmeng.github.io/2017/11/20/blog7/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=//wnagmeng.github.io/2017/11/20/blog7/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/案例/" class="color3">案例</a>
+      
+    <a href="/tags/javascript/" class="color1">javascript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaScript中的错误类型"><span class="post-toc-text">JavaScript中的错误类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Error"><span class="post-toc-text">Error</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EvalError"><span class="post-toc-text">EvalError</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RangeError"><span class="post-toc-text">RangeError</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ReferenceError"><span class="post-toc-text">ReferenceError</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SyntaxError"><span class="post-toc-text">SyntaxError</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TypeError"><span class="post-toc-text">TypeError</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#URIError"><span class="post-toc-text">URIError</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用try-catch进行错误处理"><span class="post-toc-text">使用try-catch进行错误处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#抛出错误"><span class="post-toc-text">抛出错误</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/13/blog6/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">css3制作一个时钟</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 WangMeng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "//wnagmeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Javascript/">Javascript</a><a class="category-link" href="/categories/html/">html</a><a class="category-link" href="/categories/感悟/">感悟</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/案例/" style="font-size: 15px;">案例</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="//music.163.com/outchain/player?type=2&id=379785&auto=1&height=0"></iframe>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/案例/" style="font-size: 15px;">案例</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
